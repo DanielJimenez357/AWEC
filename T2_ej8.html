@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var presidente = prompt("Cual fue el primer presidente de la democracia española");
+        while (presidente !== "Adolfo Suarez") {
+        switch (presidente) {
+            default:
+                presidente = prompt("ERROR. Intentelo de nuevo. ¿Cual fue el primer presidente de la democracia española");
+                break
+            case "Adolfo":
+                presidente = prompt("Te falta el apellido. ¿Cual fue el primer presidente de la democracia española");
+                break
+            case "Suarez":
+                presidente = prompt("Te falta el nombre. ¿Cual fue el primer presidente de la democracia española");
+                break
+        }
+            }
+    </script>
+</body>
+</html>

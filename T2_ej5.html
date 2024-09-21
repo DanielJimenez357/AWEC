@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var countdown = prompt("Introdice un numero para iniciara la cuenta atras");
+        while (countdown>0) {
+            alert(countdown+ "...");
+            countdown++; /*al hacer el cambio de "--" a "++" lo que conseguimos es que la variable aumente su valor 
+                y dado que no esta controlado en la condicion del while, hemos conseguido crear un bucle infinito*/
+            
+        }
+    </script>
+</body>
+</html>

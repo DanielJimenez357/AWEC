@@ -7,12 +7,12 @@
 </head>
 <body>
     <script type="text/javascript">
-        var horas = 9
-        var mediaHora = false
-        for (horas < 22; horas++; mediaHora = false) {
-            document.write(horas + mediaHora)
-            mediaHora = true
-        } 
+        var tiempo = 9
+        while (tiempo < 22) {
+            document.write(tiempo + "<hr>")
+            document.write(tiempo + ":30" + "<hr>")
+            tiempo++
+        }
     </script>
 </body>
 </html>
