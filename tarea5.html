@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numeroJugador1 = parseInt(prompt("Introduzca su numero"))
+        let numeroJugador2
+        while (numeroJugador2 !== numeroJugador1) {
+            numeroJugador2 = parseInt(prompt("nuevo intento"))
+
+            if (numeroJugador2 < numeroJugador1) {
+                alert("El numero es mas grande")
+            } 
+            else {
+                alert("El numero es mas pequeño")
+            }
+        }
+    </script>
+</body>
+</html>

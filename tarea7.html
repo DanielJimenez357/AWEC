@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let columnas = window.prompt("columnas")
+        let filas = window.prompt("filas") 
+        let altura = window.prompt("altura")
+        let anchura = window.prompt("anchura") 
+        document.write("<table border='0' cellspacing='2' bgcolor='black' width=" + (anchura*columnas) + ">")
+
+            for (let i = 0; i < filas; i++ ) {
+                document.write("<tr>")
+                for (let j = 0; j< columnas; j ++){
+                    document.write("<td bgcolor = 'white' width = " + anchura + " height=" + altura + " ></td>")
+            }
+            document.write("</tr>")
+        }
+        document.write("</tr>")
+        document.write("</table>")
+        </script>
+</body>
+</html>

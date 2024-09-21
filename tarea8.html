@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let anchura = window.prompt("anchura") 
+        let altura = anchura
+        let contador = 0
+        document.write("<table border='0' cellspacing='2' bgcolor='black' width=" + (anchura*8) + ">")
+
+            for (let i = 0; i < 8; i++ ) {
+                document.write("<tr>")
+                for (let j = 0; j< 8; j ++){
+                    if ((j + contador)%2 == 0) {
+                        document.write("<td bgcolor = 'black' width = " + anchura + " height=" + altura + " ></td>")
+            } else {
+                document.write("<td bgcolor = 'white' width = " + anchura + " height=" + altura + " ></td>")
+            }
+        }
+            document.write("</tr>")
+        contador++
+    }
+        document.write("</tr>")
+        document.write("</table>")
+    </script>    
+</body>
+</html>
