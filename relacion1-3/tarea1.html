@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src = "funciones.js"></script>
 </head>
 <body>
     <script>
         const d = new Date()
-        let año = (d.getFullYear())
-        let edad =  20 //prompt("Introduce tu edad")
+        let ano = (d.getFullYear())
+        let nacimiento =  prompt("Introduce el año de nacimiento")
 
-        function ageCalculator (añoActual, edadActual){
-            document.write((añoActual - edadActual))
-        }
-         
-        ageCalculator(año, edad)
+        ageCalculator(ano, nacimiento)
         
     </script>
 </body>
