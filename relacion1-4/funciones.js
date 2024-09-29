@@ -87,7 +87,3 @@ function factorial (numero) {
     }
     document.write(numeroFactorial)
 }
-
-function divisible () {
-    
-}
