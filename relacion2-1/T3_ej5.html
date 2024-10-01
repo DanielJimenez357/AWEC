@@ -4,11 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src = "funciones.js"></script>
 </head>
 <body>
     <script>
-        let eleccion = prompt("Introduce una opcion \n 1.Potencia \n 2.Raiz \n 3.Potencia \n 4.Trigonometria")
-        
+        let eleccion = parseInt(prompt("Introduce una opcion \n 1.Potencia \n 2.Raiz \n 3.Decimal \n 4.Trigonometria"))
+        switch (eleccion) {
+            case 1:
+                potencia()
+                break;
+            case 2:
+                raiz()
+                break;
+            case 3:
+                decimal()
+                break;
+            case 4:
+                angulo()
+                break;
+        }
     </script>
 </body>
 </html>
