@@ -7,10 +7,11 @@
 </head>
 <body>
     <script>
-        let d = new Date(2005,11,20)
-        let fActual = new Date()
-        for(let i = d.getFullYear(); i<2100; d.setFullYear(d.getFullYear()+1)) {
-            document.write(d.getFullYear())
+        let d = new Date(prompt("introduza su fecha de nacimiento en el formato YYYY,MM,DD"))
+        for(let i = d.getFullYear(); i<2100; i++) {
+            d.setFullYear(d.getFullYear()+1)
+            if (d.getMonth() == 11 && d.getDay() == 0)
+                console.log("Año en el que el cumpleaños cae en domingo: " +    d.getFullYear())
         }
     </script>
 </body>
