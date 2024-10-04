@@ -19,3 +19,30 @@ function ecuacion (a,b,c) {
 function calculoPow(a,b) {
     document.write("El resultado es: " + Math.pow(a,b))
 }
+
+function colSen (a) {
+    document.write("<table border='1px'><tr><td>Numero</td><td>Seno</td></tr>")
+    for (let i = a; i<=360 ; i++) {
+        document.write("<tr><td>" + a + "</ul>")
+        document.write("<td>" + (Math.sin(a)) + "</tr></ul>")
+        a++
+    }
+    document.write("</table>")
+}
+
+function imagen () {
+    let img 
+    let prob =(Math.random()*100)
+    if (prob <33) {
+        img = "imagen1.jpeg"
+        
+    }
+    if (prob >33) {
+        img = "imagen2.jpeg"
+        
+    }
+    if (prob>66) {
+        img = "imagen3.jpeg"
+     }
+     return img
+}
