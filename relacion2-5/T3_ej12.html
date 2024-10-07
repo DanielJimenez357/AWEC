@@ -10,11 +10,12 @@
     <h3>
         <script>
             let titulo = prompt("Introduce un titulo")
-            let boton = nuevaVEntana.document.createElement("button")
-            boton.innerText = "Cerrar"
             const nuevaVEntana = window.open("",titulo,"width=500,height=400");
-            nuevaVEntana.document.body.appendChild(boton)
+            let boton = nuevaVEntana.document.createElement("button")
+            boton.innerText = "Cerrar Ventana"
             nuevaVEntana.document.write(titulo)
+            window.document.body.append(boton)
+            boton.onclick = function() {nuevaVEntana.close()}
             nuevaVEntana.moveTo(innerWidth, -innerHeight)
         </script>
     </h3>
