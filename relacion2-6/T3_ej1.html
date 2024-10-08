@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px">
+        <tr>
+            <td>Navigator.cookieEnable</td>
+            <td id="cookie"></td>
+        </tr>
+        <tr>
+            <td>navigator.appCodeName</td>
+            <td id="appNombre"></td>
+        </tr>
+        <tr>
+            <td>navigator.platform</td>
+            <td id="plataforma"></td>
+        </tr>
+    </table>
+    <script>
+        document.getElementById("cookie").innerHTML = navigator.cookieEnabled
+        document.getElementById("appNombre").innerHTML = navigator.appCodeName
+        document.getElementById("plataforma").innerHTML = navigator.platform
+    </script>
+    
+</body>
+</html>

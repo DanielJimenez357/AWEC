@@ -10,7 +10,7 @@ function abrirVentana(url) {
 	window.document.body.append(boton4);
 	let nuevaVEntana;
 	boton3.onclick = function () {
-        nuevaVEntana = window.open(url, "titulo", "width=500,height=400");
+        nuevaVEntana = window.open("", "titulo", "width=500,height=400");
 		let boton = nuevaVEntana.document.createElement("button");
 		boton.innerText = "Cerrar ventana";
 		nuevaVEntana.document.body.append(boton);

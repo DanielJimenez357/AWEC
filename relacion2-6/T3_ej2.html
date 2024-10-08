@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px">
+        <tr>
+            <td>Screen.width</td>
+            <td id="ancho"></td>
+        </tr>
+        <tr>
+            <td>Screen.height</td>
+            <td id="altura"></td>
+        </tr>
+        <tr>
+            <td>Screen.availWidth</td>
+            <td id="anchuraDisp"></td>
+        </tr>
+        <tr>
+            <td>Screen.availHeight</td>
+            <td id="alturaDisp"></td>
+        </tr>
+        <tr>
+            <td>Screen.colorDepth</td>
+            <td id="color"></td>
+        </tr>
+        <tr>
+            <td>Screen.pixelDepth</td>
+            <td id="pixel"></td>
+        </tr>
+    </table>
+    <script>
+        document.getElementById("ancho").innerHTML = screen.width
+        document.getElementById("altura").innerHTML = screen.height
+        document.getElementById("anchuraDisp").innerHTML = screen.availWidth
+        document.getElementById("alturaDisp").innerHTML = screen.availHeight
+        document.getElementById("color").innerHTML = screen.colorDepth
+        document.getElementById("pixel").innerHTML = screen.pixelDepth
+    </script>
+</body>
+</html>
