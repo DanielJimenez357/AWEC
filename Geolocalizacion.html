@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #mapholder {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="mapholder"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        function posicion(posicion) {
+            let latitud = posicion.coords.latitude;
+            let longitud = posicion.coords.longitude;
+
+            let mapa = L.map('mapholder').setView([latitud, longitud], 14);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(mapa);
+            L.marker([latitud, longitud]).addTo(mapa).bindPopup('Ubicación actual').openPopup();
+        }
+
+        function obtenerUbicacion() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(posicion);
+            } else {
+                alert("Geolocalización no es soportada por este navegador.");
+            }
+        }
+
+        window.onload = obtenerUbicacion;
+    </script>
+</body>
+</html>
