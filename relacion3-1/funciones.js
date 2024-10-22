@@ -62,3 +62,11 @@ function volumenArea (radio) {
     let area = (Math.PI * Math.pow(radio,2))
     document.write("El volumen es: " + volumen + " y el area es: " + area)
 }
+
+
+
+
+
+
+
+
