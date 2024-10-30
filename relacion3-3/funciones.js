@@ -66,6 +66,10 @@ function paresImpares () {
     document.write("Array ordenado por pares e impares: " + pares.concat(impares))
 }
 
-function label () {
+const introducirTrabajador = (nombre, ventas) => void trabajadores.push(nombre,ventas)
 
+const buscarTrabajador = (nombre) => trabajadores.indexOf(nombre)
+
+function calculoSueldo() {
+    
 }
