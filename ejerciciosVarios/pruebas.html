@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const modificaArray=(arrValores, fEjecuta) => {
+            const arrSalida=[]
+            arrValores.forEach(Element => {
+                arrSalida.push(fEjecuta(Element))
+            })
+            return arrSalida
+        }
+
+        arrMod=modificaArray([3,4,5], valor=>valor-1)
+
+        const fVerifica=(arrValores, fcomprobar) => {
+            const arrSalida=[]
+            arrValores.forEach(Element => {
+                if (fcomprobar(Element)) {
+                    arrSalida.push(Element)
+                }
+            })
+            return arrSalida
+        }
+
+        let alumno1 = {
+            nombre: "Juan",
+            clase: "1SMR",
+            notas: [2,6],
+            filtrarNotas: function (filtro) {
+                arrSalida = [] 
+                this.notas.forEach(Element => {
+                    if (filtro(Element)) {
+                        arrSalida.push(Element)
+                    }
+                }
+            )
+            return arrSalida
+            }
+        }
+
+        console.log(alumno1.filtrarNotas(Element=> Element>5))
+        
+
+    </script>
+</body>
+</html>

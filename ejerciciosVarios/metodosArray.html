@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        const compra = ["Peras","Manzanas","Kiwis","Plátanos","Mandarinas"]
+        function eliminar () {
+            compra.splice(1,1)
+            document.write(compra)
+        }
+        function anadir() {
+            compra.splice(4,0,"Naranjas","Sandía")
+            document.write(compra)
+        }
+        function quitar() {
+            compra.splice(2,1,"Cerezas","Nísperos")
+            document.write(compra)
+        }
+
+        document.write(compra + "<br>")
+
+        <button onclick="eliminar()">Eliminar Manzana</button>
+        <button onclick="anadir()">Añadir </button>
+        <button onclick="quitar()">Quitar</button> 
+
+        const estudiante = {
+            nombre: "Juan",
+            grupo: "1SMR",
+            notas: [4,6],
+            mostrarNotas: function () {
+                this.notas.forEach(element => {     
+                    console.log(this.notas)
+                });
+            } ,
+            anadirNota: function (nota) {
+                this.notas.push(nota)
+            },
+            variasNotas: function (arrNotas) {
+                this.notas=this.notas.concat(arrNotas)
+            }
+        }
+            */
+
+            const arrAlumnos = [{
+                nombre: "Juan",
+                grupo: "1SMR",
+                notas: [4,6]
+            }, {
+                nombre: "Antonio",
+                grupo: "1SMR",
+                notas: [5,8]
+            }, {
+                nombre: "Daniel",
+                grupo: "1SMR",
+                notas: [2,3]
+            }
+        ]
+
+
+        
+        //const comparar = (obj1, obj2) => obj1.nombre.localeCompare(obj2.nombre)
+        
+        const media = (obj1, obj2) => {
+            let media1 = (obj1.notas[0] + obj1.notas[1])/2
+            let media2 = (obj2.notas[0] + obj2.notas[1])/2
+            return media1 - media2    
+        }
+
+        console.log(arrAlumnos.sort(media))
+        
+        
+        
+    </script>
+</body>
+</html>
