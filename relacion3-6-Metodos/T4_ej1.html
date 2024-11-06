@@ -4,12 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="funciones.js"></script>
 </head>
 <body>
     <script>
-        const numeros = [1,2,3,4,5]
+        const numeros = [1,2,3,4,5,3,10]
+        const numeros2 = [3,6,1,2,7,3,11]
+        const frutas = ["Platano", "Naranja", "Manazana", "Mango", "tenis"]
+
+
+        let numeroM = -10
+        numeros.forEach(element => {
+            if (element>numeroM) 
+                numeroM = element
+            return numeroM
+        });
+        document.write(numeroM + "<br>")
         
+        document.write(frutas.reduce((element1, element2) => (element1.length > element2.length ? element1 : element2)) + "<br>")
+
+        document.write(numeros.filter(element => element % 2 === 0 ) + "<br>")
+
+        document.write(numeros.filter(element => element%2 !== 0) + "<br>")
+
+        document.write(frutas.filter(element => element.includes("is")) + "<br>")
+
+        document.write(numeros.every(element => element % 3 === 0) + "<br>")
+
+        document.write(numeros2.concat(numeros) + "<br>")
+
+        document.write(numeros2.concat(numeros.sort((a,b) => b-a )) + "<br>")
+
+        document.write(frutas.slice(1) + "<br>")
+
+        frutas.unshift("Pera")
+        document.write(frutas + "<br>")
+
+        document.write(masFrutas = frutas.map((element,index) => (index%2 === 0 ? "limon" : element  )))
+
     </script>
 </body>
 </html>

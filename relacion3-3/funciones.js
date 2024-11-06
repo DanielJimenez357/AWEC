@@ -68,8 +68,5 @@ function paresImpares () {
 
 const introducirTrabajador = (nombre, ventas) => void trabajadores.push(nombre,ventas)
 
-const buscarTrabajador = (nombre) => trabajadores.indexOf(nombre)
+const buscarTrabajador = nombre => trabajadores.indexOf(nombre)
 
-function calculoSueldo() {
-    
-}
