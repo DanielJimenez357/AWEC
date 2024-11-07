@@ -15,3 +15,9 @@ function buscarTesoro(mapa, fila, columna) {
         return pista
     return buscarTesoro(mapa, numero1, numero2)
 }
+
+function crearMapa() {
+    let mapa = [[],[],[],[],[]]
+    let numero1 = Math.random()*5
+    mapa[fila].fill()
+}
