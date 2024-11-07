@@ -18,6 +18,18 @@ function buscarTesoro(mapa, fila, columna) {
 
 function crearMapa() {
     let mapa = [[],[],[],[],[]]
-    let numero1 = Math.random()*5
-    mapa[fila].fill()
+    let numero1 = Math.floor(Math.random()*5) + 1
+    let numero2 = Math.floor(Math.random()*5) + 1
+    let numero3 = Math.floor(Math.random()*5) + 1
+    let numero4 = Math.floor(Math.random()*5) + 1
+    let limite = Math.random()*12 + 5
+    for (let i = 0; i < limite ; i++) {
+        let pista = numero3 + numero4
+        if (i == limite) 
+            mapa[numero1].fill(pista.toString, numero2, numero2+1)
+        else {
+
+        }
+        
+    }
 }
