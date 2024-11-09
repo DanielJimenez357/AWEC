@@ -25,8 +25,6 @@ function buscarTesoro(mapa, fila, columna) {
 	return buscarTesoro(mapa, numero1, numero2);
 }
 
-
-
 function crearMapa() {
 	let mapa = [
 		[1, 1, 1, 1, 1],
@@ -41,7 +39,6 @@ function crearMapa() {
 
 	let limite = Math.floor(Math.random() * 12 + 5);
 	for (let i = 0; i < limite; i++) {
-
 		let numero3 = Math.floor(Math.random() * 5);
 		let numero4 = Math.floor(Math.random() * 5);
 		let pista = (numero3 + 1).toString() + (numero4 + 1).toString();
@@ -52,7 +49,7 @@ function crearMapa() {
 			pista = (numero3 + 1).toString() + (numero4 + 1).toString();
 		}
 
-        mapa[numero1][numero2] = parseInt(pista);
+		mapa[numero1][numero2] = parseInt(pista);
 
 		if (i === limite - 1) {
 			mapa[numero1][numero2] = parseInt(
@@ -65,7 +62,7 @@ function crearMapa() {
 		numero2 = numero4;
 	}
 
-    for (let i = 0; i < 5; i++) {
+	for (let i = 0; i < 5; i++) {
 		for (let j = 0; j < 5; j++) {
 			if (mapa[i][j] === 1) {
 				let newPista;
@@ -73,10 +70,44 @@ function crearMapa() {
 					let randomRow = Math.floor(Math.random() * 5);
 					let randomCol = Math.floor(Math.random() * 5);
 					newPista = (randomRow + 1).toString() + (randomCol + 1).toString();
-				} while (casillasOcupadas.includes(newPista) || newPista === (i + 1).toString() + (j + 1).toString());
+				} while (
+					casillasOcupadas.includes(newPista) ||
+					newPista === (i + 1).toString() + (j + 1).toString()
+				);
 				mapa[i][j] = parseInt(newPista);
 			}
 		}
 	}
 	return mapa;
+}
+
+let casillas1 = [
+    [3, 8, 8, 1, 6],
+    [9, 7, 9, 3, 2],
+    [5, 4, 6, 1, 3],
+    [5, 3, 7, 6, 7],
+    [2, 1, 8, 9, 4]
+];
+
+
+
+function buscarSaddlePoints(casillas) {
+	let puntos = [];
+
+	casillas.forEach((fila, i) => {
+		let filaM = Math.max(...fila);
+
+		fila.forEach((value, j) => {
+			if (value === filaM) {
+				let valorMin = casillas.every((r) => r[j] >= value);
+
+				if (valorMin) puntos.push([i, j]);
+			}
+		});
+	});
+	if (puntos.length > 0) 
+		return puntos
+	else 
+		return texto = "no hay saddle points"
+	
 }
