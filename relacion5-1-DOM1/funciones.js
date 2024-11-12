@@ -21,3 +21,23 @@ const contarParr3 = () => {
    let y =  x[2].getElementsByTagName('a')
    return y.length
 }
+
+
+function  mostrar (arr) {
+    arr.forEach(element => {
+        let codigo = element.codigo
+        let dni = element.dni
+        let nombre = element.Nombre
+        let edad = element.edad
+        let objeto = "Codigo: " + codigo + " DNI: " + dni + " Nombre: " 
+        + nombre + " Edad: " + edad
+        return anadirElemento(objeto) 
+    })
+}
+
+const anadirElemento = elemento => {
+    let parra = document.createElement("p") 
+    parra.textContent = elemento
+    document.body.appendChild(parra)
+}
+
