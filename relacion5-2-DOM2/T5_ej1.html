@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="funciones.js"></script>
+</head>
+<body>
+    <p>
+        <a href="https://www.google.com/?hl=es">Enlace a google</a>
+        <a href="#">Enlace a nigun lado</a>
+        <a href="#">Enlace a ningun lado</a>
+        <a href="https://www.google.com/?hl=es">Enlace a google</a>
+        <a href="#">Enlace a nigun lado</a>
+    </p>
+    <p>
+        <a href="https://www.google.com/?hl=es">Enlace a google</a>
+        <a href="#">Enlace a nigun lado</a>
+    </p>
+    <p>
+        <a href="https://www.google.com/?hl=es">Enlace a google</a>
+        <a href="https://www.google.com/?hl=es">Enlace a google</a>
+        <a href="#">Enlace a nigun lado</a>
+    </p>
+    <script>
+        document.write("El numero de enlaces es: " + contarEnlaces().length)
+        document.write("<br> El penultimo enlace es: " + direccion(contarEnlaces()))
+        document.write("<br> Numero de enlaces que llevan a google: " + enlacesGoo(contarEnlaces()))
+        document.write("<br> Numero de enlaces del tercer parrafo: " + contarParr3())
+    </script>
+</body>
+</html>
