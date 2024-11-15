@@ -41,3 +41,41 @@ const anadirElemento = elemento => {
     document.body.appendChild(parra)
 }
 
+
+const mostrarMas = () => {cadena2.style.display = "contents"}
+const ocultar = () => {cadena2.style.display= "none"}
+
+
+let contadorLista = 5
+const anadir = () => {
+    contadorLista++
+    lista = document.getElementById("lista")
+    element = document.createElement("li")
+    element.innerHTML = "Elemento " + contadorLista
+    lista.appendChild(element)
+}
+
+
+const masBotones = () => {
+    botones = document.getElementById("ficheros")
+    boton = document.createElement("input")
+    boton.type = "file"
+    boton.onclick = masBotones
+    botones.appendChild(boton)
+}
+
+let contadorImagenes = 1
+const adelante = () => {
+    if (contadorImagenes < 6) {
+        contadorImagenes++
+        let imagen = document.getElementById("imagen")
+        imagen.src = "assets/imagen" + contadorImagenes + ".jpeg"
+    }
+}
+const atras = () => {
+    if (contadorImagenes > 1){
+        contadorImagenes--
+        let imagen = document.getElementById("imagen")
+        imagen.src = "assets/imagen" + contadorImagenes + ".jpeg"
+    }
+}
