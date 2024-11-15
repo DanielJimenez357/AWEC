@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module" src="./Empleado.mjs">
+        import { Empleado, empleados } from './Empleado.mjs'
+
+        let formulario = document.forms.formulario1
+
+        const newEmpleado = (codigo, nombre, telefono) => {
+            empleado1 = new Empleado (codigo, nombre, telefono)
+            subir(empleado1)
+        }
+
+        const mostrar = () => {
+            let parrafo = document.createElement("p")
+            empleados.forEach(element => {
+                parrafo.appendChild(element.codigo, element.nombre, element.telefono)
+            });
+        }
+
+        mostrar ()
+    </script>
+    <form action="newEmpleado(formulario[0],formulario[1],formulario[2])" name="formulario1">
+        <label for="">Codigo</label>
+        <input type="text">
+        <label for="">Nombre</label>
+        <input type="text">
+        <label for="">Telefono</label>
+        <input type="text">
+        <input type="submit">
+    </form>
+</body>
+</html>

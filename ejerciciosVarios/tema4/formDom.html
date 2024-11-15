@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let formulario = document.forms.login
+
+        const comprobar = log => {
+            let nombreBol = false
+            let passwordBol = false
+        if () {
+            logIns.forEach(element => {
+                if ( obj.nombre === element.nombre) {
+                    nombreBol = true
+                    
+                }
+                if (nombreBol == true && obj.password === element.password) {
+                    passwordBol = true
+                }
+            })
+            
+            if (passwordBol === true && nombreBol == true) {
+                alert("Inicio correcto")
+            } else {
+                alert("")
+            }
+
+        }
+
+        let logIns = [
+            {nombre: "juan",password:123},
+        ]
+    }
+
+
+    </script>
+
+    <form name="login" >
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre">
+        <br>
+        <label for="contraseña">Contraseña</label>
+        <input type="password" name="contraseña">
+        <input type="submit">
+    </form>
+</body>
+</html>
