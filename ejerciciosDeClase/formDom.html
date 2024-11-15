@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Registrar Empleado</title>
+	</head>
+	<body>
+		<script type="module">
+			import { Empleado, subir, empleados } from "./empleado.mjs";
+
+			let formulario = document.forms.registro;
+
+			formulario.addEventListener("submit", (e) => {
+				e.preventDefault();
+
+				const codigo = formulario.codigo.value;
+				const nombre = formulario.nombre.value;
+				const telefono = formulario.telefono.value;
+
+				const nuevoEmpleado = new Empleado(codigo, nombre, telefono);
+				subir(nuevoEmpleado);
+				console.log(empleados);
+			});
+		</script>
+
+		<form name="registro">
+			<label for="codigo">Código</label>
+			<input type="text" name="codigo" required />
+			<br />
+			<label for="nombre">Nombre</label>
+			<input type="text" name="nombre" required />
+			<br />
+			<label for="telefono">Teléfono</label>
+			<input type="text" name="telefono" required />
+			<br />
+			<input type="submit" value="Registrar" />
+		</form>
+	</body>
+</html>
