@@ -19,9 +19,21 @@ function makePuzzle(size) {
 		for (let j = 0; j < size; j++) {
 			let piece;
 			if (i == 0 && j == 0) {
-				piece = { empty: true, number: 20,  getId: function(){return this.number}};
+				piece = {
+					empty: true,
+					number: null,
+					getId: function () {
+						return this.number;
+					},
+				};
 			} else {
-				piece = { empty: false, number: contador, getId: function(){return this.number}};
+				piece = {
+					empty: false,
+					number: contador,
+					getId: function () {
+						return this.number;
+					},
+				};
 			}
 			contador++;
 			row.push(piece);
@@ -31,15 +43,45 @@ function makePuzzle(size) {
 	return puzzle;
 }
 
-function makePuzzleDom (puzzle) {
-	let table = document.createElement("table")
-	puzzle.forEach(element1 => {
-		let lista = document.createElement("ul")
-		element1.forEach(element2 => {
-			let sublista = document.createElement("li")
-			lista.appendChild(sublista)
+function makePuzzleDom(puzzle) {
+	let table = document.createElement("table");
+	table.style.display = "grid";
+	table.style.width = "800px";
+	table.style.gridTemplateRows = "repeat(" + size + ", auto)";
+	puzzle.forEach((element1) => {
+		let lista = document.createElement("ul");
+		lista.style.display = "grid";
+		lista.style.gridTemplateColumns = "repeat(" + size + ", auto)";
+		element1.forEach((element2) => {
+			let sublista = document.createElement("li");
+			sublista.style.padding = "50px";
+			sublista.style.width = "50px";
+			if (element2.getId() === null) {
+				sublista.style.color = "rgb(86, 68, 200)";
+				sublista.style.background = "rgb(86, 68, 200)";
+			} else {
+				sublista.style.background = "rgb(100, 40, 100)";
+			}
+			sublista.style.textAlign = "center";
+			sublista.style.listStyle = "none";
+			sublista.addEventListener("click",  () => {
+				if (checkAround(searchIndex(puzzle, element2.getId()))) {
+					move(searchIndex(puzzle, element2.getId()), searchIndex(puzzle, null))
+				}
+				if (puzzleWin.flat() == puzzle.flat())
+					alert ("HAS GANADO")
+			})
+			sublista.innerHTML = element2.getId();
+			lista.appendChild(sublista);
 		});
+		table.appendChild(lista);
 	});
+	document.body.appendChild(table);
+}
+
+function updateDOM (puzzle, size) {
+	document.body.innerHTML = ""; 
+    makePuzzleDom(puzzle, size);
 }
 
 //flat the array to make it easyer to mix
@@ -63,7 +105,8 @@ function shuffle(puzzle) {
 		}
 		shuffledPuzzle.push(arrTemp);
 	}
-	return shuffledPuzzle;
+	return shuffledPuzzle ;
+
 }
 
 const checkId = (item, id) => {
@@ -74,7 +117,7 @@ const searchIndex = (arr, id) => {
 	for (let row = 0; row < arr.length; row++) {
 		let col = arr[row].findIndex((item) => checkId(item, id));
 		if (col !== -1) {
-			return (emptyPiece = { row, col });
+			return { row, col };
 		}
 	}
 };
@@ -118,9 +161,9 @@ function checkAround(coordinates) {
 }
 
 //change the value beetwen the emty tile and the moving tile so it looks like it is moving
-function move(coordinatesMovingTile, coordinatesEmptyTile ) {
-	puzzle[coordinatesMovingTile.row][coordinatesMovingTile.col].empty = true
-	puzzle[coordinatesEmptyTile.row][coordinatesEmptyTile.col].empty = false
-	puzzle[coordinatesMovingTile.row][coordinatesMovingTile.col].number = puzzle[coordinatesEmptyTile.row][coordinatesEmptyTile.col].number
-	puzzle[coordinatesEmptyTile.row][coordinatesEmptyTile.col].number = puzzle[coordinatesMovingTile.row][coordinatesMovingTile.col].number
+function move(from, to) {
+    let temp = puzzle[from.row][from.col];
+    puzzle[from.row][from.col] = puzzle[to.row][to.col];
+    puzzle[to.row][to.col] = temp;
+	updateDOM(puzzle, 4)
 }

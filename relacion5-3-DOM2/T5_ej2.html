@@ -8,12 +8,11 @@
 </head>
 <body>
     <script>
-        var puzzle = makePuzzle(4)
+        let size = 4
+        var puzzle = makePuzzle(size)
+        var puzzleWin = puzzle 
         puzzle = shuffle(puzzle)
-        console.log(puzzle)
-        console.log(searchIndex(puzzle, 3))
-        console.log(checkAround(searchIndex(puzzle, 3)))
-        console.log(puzzle[1][1].getId())
+        makePuzzleDom(puzzle)
     </script>
 </body>
 </html>
