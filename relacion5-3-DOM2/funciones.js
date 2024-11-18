@@ -19,9 +19,9 @@ function makePuzzle(size) {
 		for (let j = 0; j < size; j++) {
 			let piece;
 			if (i == 0 && j == 0) {
-				piece = { empty: true, canMove: true, number: contador };
+				piece = { empty: true, number: 20,  getId: function(){return this.number}};
 			} else {
-				piece = { empty: false, canMove: false, number: contador };
+				piece = { empty: false, number: contador, getId: function(){return this.number}};
 			}
 			contador++;
 			row.push(piece);
@@ -31,7 +31,18 @@ function makePuzzle(size) {
 	return puzzle;
 }
 
-//flat the array to make it easyer to unshort
+function makePuzzleDom (puzzle) {
+	let table = document.createElement("table")
+	puzzle.forEach(element1 => {
+		let lista = document.createElement("ul")
+		element1.forEach(element2 => {
+			let sublista = document.createElement("li")
+			lista.appendChild(sublista)
+		});
+	});
+}
+
+//flat the array to make it easyer to mix
 function flat(arr) {
 	let shufflePuzzle = arr.flat();
 	shufflePuzzle.sort(function () {
@@ -40,7 +51,7 @@ function flat(arr) {
 	return shufflePuzzle;
 }
 
-//unshort the array
+//mix the array
 function shuffle(puzzle) {
 	let flattedPuzzle = flat(puzzle);
 	let shuffledPuzzle = [];
@@ -68,7 +79,7 @@ const searchIndex = (arr, id) => {
 	}
 };
 
-//funtion who returns the position and coordenates of the moving tile
+//funtion who check and return if it is possible the coordinates of an empty tile
 function checkAround(coordinates) {
 	let tileMoving = coordinates;
 	let canMove = null;
@@ -106,4 +117,10 @@ function checkAround(coordinates) {
 	return canMove;
 }
 
-function move(coordinates) {}
+//change the value beetwen the emty tile and the moving tile so it looks like it is moving
+function move(coordinatesMovingTile, coordinatesEmptyTile ) {
+	puzzle[coordinatesMovingTile.row][coordinatesMovingTile.col].empty = true
+	puzzle[coordinatesEmptyTile.row][coordinatesEmptyTile.col].empty = false
+	puzzle[coordinatesMovingTile.row][coordinatesMovingTile.col].number = puzzle[coordinatesEmptyTile.row][coordinatesEmptyTile.col].number
+	puzzle[coordinatesEmptyTile.row][coordinatesEmptyTile.col].number = puzzle[coordinatesMovingTile.row][coordinatesMovingTile.col].number
+}
