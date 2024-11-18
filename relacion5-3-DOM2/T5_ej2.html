@@ -8,9 +8,11 @@
 </head>
 <body>
     <script>
-        console.log(makePuzzle(4))
-        console.log(shuffle(makePuzzle(4)))
-        console.log(searchIndex(shuffle(makePuzzle(4)), 3))
+        var puzzle = makePuzzle(4)
+        puzzle = shuffle(puzzle)
+        console.log(puzzle)
+        console.log(searchIndex(puzzle, 3))
+        console.log(checkAround(searchIndex(puzzle, 3)))
     </script>
 </body>
 </html>
