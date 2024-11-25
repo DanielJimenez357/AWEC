@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body style="width: 100vh; height: 100vh;">
-    <script type="module">
-        import {updatePosition} from "./funciones.js"
-        updatePosition()
-    </script>
-    <div id="divX"></div>
-    <div id="divY"></div>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body style="width: 100vh; height: 100vh">
+		<script type="module">
+			import { updatePosition } from "./funciones.js";
+			let box = document.getElementById("box");
+			let positionY = document.getElementById("divY");
+			let positionX = document.getElementById("divX");
+            box.addEventListener("mousemove", (event) => {
+                updatePosition(event, positionY, positionX)
+            })
+		</script>
+		<div
+			id="box"
+			style="background-color: steelblue; height: 300px; width: 400px"
+		>
+			<div id="divX"></div>
+			<div id="divY"></div>
+		</div>
+	</body>
 </html>

@@ -2,14 +2,10 @@ const click = () => {
     document.addEventListener("click", () => alert("Hola"))
 }
 
-const updatePosition  = () => {
-    body.on
-    let positionY = document.getElementById("divY")
-    let positionX = document.getElementById("divX")
-    positionX.innerHTML = Event.clientX
-    positionY.innerHTML = Event.clientY
+const updatePosition  = (event ,positionY, positionX) => {
+    
+    positionY.innerHTML = event.clientY
+    positionX.innerHTML = event.clientX
 }
-
-
 
 export {click, updatePosition}
