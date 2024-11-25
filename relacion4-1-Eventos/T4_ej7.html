@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        import {reset, hint} from "./funciones.js"
+        let button = document.getElementById("btnReset")
+        button.addEventListener("click", reset)
+        hint ()
+    </script>
+    <h1>Formulario</h1>
+    <h2 id="help"></h2>
+    <form>
+        <label>Nombre</label>
+        <input type="text">
+        <label>Correo</label>
+        <input type="text">
+        <label>Comentario</label>
+        <input type="text">
+        <hr>
+    </form>
+    <button>Enviar</button>
+    <button id="btnReset">Resetear</button>
+</body>
+</html>

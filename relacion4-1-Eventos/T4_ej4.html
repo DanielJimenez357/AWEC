@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-    <script type="module">
-        import {timePassed} from "./funciones.js"
-        window.onload = timePassed()
-    </script>
 <body>
-    <h1>Tiempo transcurrido: <span id="time">0</span>s</h1>
+    <script type="module">
+        import {makeCanvas} from "./funciones.js"
+        window.onload = makeCanvas()
+    </script>
 </body>
 </html>

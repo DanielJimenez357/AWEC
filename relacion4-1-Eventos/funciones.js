@@ -1,17 +1,139 @@
 const click = () => {
-  document.addEventListener("click", () => alert("Hola"));
+	document.addEventListener("click", () => alert("Hola"));
 };
 
 const updatePosition = (event, positionY, positionX) => {
-  positionY.innerHTML = event.clientY;
-  positionX.innerHTML = event.clientX;
+	positionY.innerHTML = event.clientY;
+	positionX.innerHTML = event.clientX;
 };
 
 const timePassed = () => {
-  let clock = setInterval(() => {
-    time += 1
-  }, 1000);
-  onload()
+	let time = 0;
+	setInterval(() => {
+		let clock = document.getElementById("time");
+		time = time + 1;
+		clock.innerHTML = time;
+	}, 1000);
 };
 
 export { click, updatePosition, timePassed };
+
+export const makeCanvas = () => {
+	let body = document.getElementsByTagName("body")[0];
+	let table = document.createElement("ul");
+	table.style.cssText = `
+        display: grid;
+        width: 500px;
+        height: 500px;
+        grid-template-rows: repeat(10, 1fr);
+        grid-template-columns: repeat(10, 1fr);
+    `;
+	for (let i = 0; i < 100; i++) {
+		let element = document.createElement("li");
+		element.addEventListener("mousemove", (event) => {
+			if (event.ctrlKey) event.target.style.background = "red";
+			else if (event.shiftKey) event.target.style.background = "blue";
+		});
+		element.style.cssText = `
+            list-style: none;
+            border: gray solid 1px
+        `;
+		table.appendChild(element);
+	}
+	body.appendChild(table);
+};
+
+export const makeCanvasUpdate = () => {
+	let body = document.getElementsByTagName("body")[0];
+	let table = document.createElement("ul");
+	table.style.cssText = `
+        display: grid;
+        width: 500px;
+        height: 500px;
+        grid-template-rows: repeat(10, 1fr);
+        grid-template-columns: repeat(10, 1fr);
+    `;
+	for (let i = 0; i < 100; i++) {
+		let element = document.createElement("li");
+		element.addEventListener("mousemove", (event) => {
+			if (event.ctrlKey) event.target.style.background = "red";
+			else if (event.shiftKey) event.target.style.background = "blue";
+			else if (event.altKey) event.target.style.background = "white";
+		});
+		element.style.cssText = `
+            list-style: none;
+            border: gray solid 1px
+        `;
+		table.appendChild(element);
+	}
+	let button = document.createElement("button");
+	button.innerHTML = "Borrar tablero";
+	button.addEventListener("click", () => {
+		let liTable = document.getElementsByTagName("li");
+		for (const element of liTable) {
+			element.style.background = "white";
+		}
+	});
+
+	body.appendChild(table);
+	body.appendChild(button);
+};
+
+export const changeImage = () => {
+	let image = document.getElementById("imagen");
+	image.addEventListener("mouseover", () => {
+		image.src = "./imagen2.jpeg";
+	});
+	image.addEventListener("mouseout", () => {
+		image.src = "./imagen1.jpeg";
+	});
+};
+
+export const changeColor = () => {
+	let liList = document.getElementsByTagName("li");
+	for (const element of liList) {
+		element.addEventListener("mouseover", () => {
+            element.style.background = element.innerHTML
+        });
+		element.addEventListener("mouseout", () => {
+            element.innerHTML = element.id
+
+        });
+	}
+};
+
+export const reset = () => {
+    let inputs = document.getElementsByTagName("input")
+    for (const element of inputs) {
+        element.value = " "
+    }
+}
+
+export const hint = () => {
+    let inputs = document.getElementsByTagName("input")
+    let labels = document.getElementsByTagName("label")
+    let help = document.getElementById("help")
+    for (let i= 0; i<3; i++) {
+        inputs[i].addEventListener("focus" , ()=> {
+            help.innerHTML = ("introduce tu " + labels[i].innerHTML)
+        })
+    }
+}
+
+export const transform = () => {
+    let input = document.getElementsByTagName("input")[0]
+    let string = input.value
+    let transformedString = "";
+    for (let i = 0; i < string.length; i++) {
+        if (string.at(i) === "&") {
+            transformedString += "and";
+        } else {
+            transformedString += string.at(i);
+        }
+    }
+    input.value = transformedString
+}
+
+
+
+export const 
