@@ -93,47 +93,90 @@ export const changeColor = () => {
 	let liList = document.getElementsByTagName("li");
 	for (const element of liList) {
 		element.addEventListener("mouseover", () => {
-            element.style.background = element.innerHTML
-        });
+			element.style.background = element.innerHTML;
+		});
 		element.addEventListener("mouseout", () => {
-            element.innerHTML = element.id
-
-        });
+			element.innerHTML = element.id;
+		});
 	}
 };
 
 export const reset = () => {
-    let inputs = document.getElementsByTagName("input")
-    for (const element of inputs) {
-        element.value = " "
-    }
-}
+	let inputs = document.getElementsByTagName("input");
+	for (const element of inputs) {
+		element.value = " ";
+	}
+};
 
 export const hint = () => {
-    let inputs = document.getElementsByTagName("input")
-    let labels = document.getElementsByTagName("label")
-    let help = document.getElementById("help")
-    for (let i= 0; i<3; i++) {
-        inputs[i].addEventListener("focus" , ()=> {
-            help.innerHTML = ("introduce tu " + labels[i].innerHTML)
-        })
-    }
-}
+	let inputs = document.getElementsByTagName("input");
+	let labels = document.getElementsByTagName("label");
+	let help = document.getElementById("help");
+	for (let i = 0; i < 3; i++) {
+		inputs[i].addEventListener("focus", () => {
+			help.innerHTML = "introduce tu " + labels[i].innerHTML;
+		});
+	}
+};
 
 export const transform = () => {
-    let input = document.getElementsByTagName("input")[0]
-    let string = input.value
-    let transformedString = "";
-    for (let i = 0; i < string.length; i++) {
-        if (string.at(i) === "&") {
-            transformedString += "and";
-        } else {
-            transformedString += string.at(i);
-        }
-    }
-    input.value = transformedString
+	let input = document.getElementsByTagName("input")[0];
+	let string = input.value;
+	let transformedString = "";
+	for (let i = 0; i < string.length; i++) {
+		if (string.at(i) === "&") {
+			transformedString += "and";
+		} else {
+			transformedString += string.at(i);
+		}
+	}
+	input.value = transformedString;
+};
+
+export const makeBalls = (ballNumber) => {
+	for (let i = 0; i<ballNumber; i++) {
+		let body = document.querySelector("body")
+		let ball = document.createElement("div")
+		ball.className = ball
+		ball.style.cssText = `
+			width: 80px;
+				height: 80px;
+				background-image: url(imagen2.jpeg);
+				background-size: cover;
+				background-repeat: no-repeat;
+				border-radius: 100px;
+		`
+		body.appendChild(ball)
+		ball.onmousedown = function (event) {
+			let shiftX = event.clientX - ball.getBoundingClientRect().left;
+			let shiftY = event.clientY - ball.getBoundingClientRect().top;
+		
+			ball.style.position = "absolute";
+			ball.style.zIndex = 1000;
+			document.body.append(ball);
+		
+			moveAt(event.pageX, event.pageY);
+		
+			function moveAt(pageX, pageY) {
+				ball.style.left = pageX - shiftX + "px";
+				ball.style.top = pageY - shiftY + "px";
+			}
+		
+			function onMouseMove(event) {
+				moveAt(event.pageX, event.pageY);
+			}
+		
+			document.addEventListener("mousemove", onMouseMove);
+		
+			ball.onmouseup = function () {
+				document.removeEventListener("mousemove", onMouseMove);
+				ball.onmouseup = null;
+			};
+		};
+		
+		ball.ondragstart = function () {
+			return false;
+		};
+	}
 }
 
-
-
-export const 
