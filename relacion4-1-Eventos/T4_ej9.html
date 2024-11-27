@@ -8,6 +8,14 @@
 <body>
     <script type="module">
         import {} from "./funciones.js"
+        let area = document.getElementById("area")
+        let ball = document-getElementById("ball")
+        area.addEventListener("ondrop")
+        ball.addEventListener("ondragover")
     </script>
+    <div id="area" style="width: 500px; height: 200px; background-color: lightgray; position: relative;">
+        <div id="ball" style="width: 30px; height: 30px; background-color: steelblue; border-radius: 5px; position: absolute;" draggable="true">
+        </div>
+    </div>
 </body>
 </html>
