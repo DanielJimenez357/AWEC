@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+        <script type="module">
+            import {growFont, changePosition} from "./funciones.js"
+            let button1 = document.querySelector("#uno")
+            button1.addEventListener("click", () => growFont(1))
+            let button2 = document.querySelector("#dos")
+            button2.addEventListener("click", () => growFont(3))
+            let button3 = document.querySelector("#tres")
+            button3.addEventListener("click", () => growFont(2))
+            let button4 = document.querySelector("#cuatro")
+            button4.addEventListener("click", () => changePosition(2))
+            let button5 = document.querySelector("#cinco")
+            button5.addEventListener("click", () => changePosition(1))
+
+        </script>
+        <div id="primero" style="display: flex; width: 80%; margin: 100px;">
+            <div style="display: block; width: 300px;">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas repudiandae
+                    tenetur sequi autem veritatis laborum voluptatem, impedit sapiente!
+                    Repellat, hic nemo. Sit sunt eligendi nihil sequi magni quam officiis
+                    error.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas repudiandae
+                    tenetur sequi autem veritatis laborum voluptatem, impedit sapiente!
+                    Repellat, hic nemo. Sit sunt eligendi nihil sequi magni quam officiis
+                    error.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas repudiandae
+                    tenetur sequi autem veritatis laborum voluptatem, impedit sapiente!
+                    Repellat, hic nemo. Sit sunt eligendi nihil sequi magni quam officiis
+                    error.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas repudiandae
+                    tenetur sequi autem veritatis laborum voluptatem, impedit sapiente!
+                    Repellat, hic nemo. Sit sunt eligendi nihil sequi magni quam officiis
+                    error.
+                </p>
+            </div>
+        </div>
+        <button id="uno">Aumentar tamaño fuente</button>
+        <button id="dos">Tamaño normal fuente</button>
+        <button id="tres">Disminuir tamaño fuente</button>
+        <br>
+        <br>
+        <button id="cuatro">Justificada</button>
+        <button id="cinco">Izquierda</button>
+	</body>
+</html>

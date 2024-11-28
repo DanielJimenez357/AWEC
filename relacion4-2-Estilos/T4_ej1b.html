@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script type="module">
+        import {noCss, yesCss} from "./funciones.js"
+        let yescss = document.querySelector("nav > a:nth-child(1)")
+        yescss.addEventListener("click", yesCss)
+
+        let nocss = document.querySelector("nav > a:nth-child(2)")
+        nocss.addEventListener("click", noCss)
+    </script>
+    <div class="lateral">
+    </div>
+    <main>
+        <nav>
+            <a href="#" >Tema normal</a>
+            <a href="#" >Tema minimalista</a>
+        </nav>
+            <h1>Pagina de ejemplo</h1>
+            <p>En esya pagina vamos a comprobar lo facil que es aplicar estils mediante css a un documento seleccionado.</p>
+            <p>Lo idela es que al seleccionar un estilo este permanezca siemore igual para el ususario. Hasta ahora no hemos visto como hacerlo. ¿Se te ocurre como podemos hacerlo? </p>
+            <div class="invisible">
+                <p>Utilizando CSS podemos incluso ocultar partes del sitio</p>
+                <p>Este parrafo debe ser solo visible en el tema normal</p>
+            </div>
+            <div class="marco">
+                <p>Esto esta dentro de un marco</p>
+            </div>
+    </main>
+</body>
+</html>
