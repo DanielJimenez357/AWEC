@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <button class="reset">Reset</button>
     <script type="module">
-        import {makeGame} from "./funciones.js"
-        makeGame(1)
-    </script>   
-</body>
+      import { makeGame, makeDom } from "./funciones.js";
+      let difficulty = "easy";
+      let body = document.querySelector(".container");
+      let butFacil = document.querySelector("#Facil");
+      butFacil.addEventListener("click", () => {
+        let container2 = document.querySelector(".container")
+
+        difficulty = "easy";
+        container2.innerHTML = "";
+        makeDom(makeGame(difficulty), difficulty);
+      });
+      let butDificil = document.querySelector("#Dificil");
+      butDificil.addEventListener("click", () => {
+        let container2 = document.querySelector(".container")
+
+        difficulty = "dificil";
+        container2.innerHTML = "";
+
+        makeDom(makeGame(difficulty), difficulty);
+      });
+      let reset = document.querySelector(".reset");
+      reset.addEventListener("click", () => {
+        let container2 = document.querySelector(".container")
+        container2.innerHTML = "";
+        makeDom(makeGame(difficulty));
+      });
+      makeDom(makeGame(difficulty), difficulty);
+    </script>
+    <div class="container"></div>
+    <button id="Facil">Facil</button>
+    <button id="Dificil">Dificil</button>
+  </body>
 </html>
