@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        import {library} from "./funciones.js"
+        window.onload = () => {
+            document.querySelector("button").addEventListener("click", library.madeBook)
+        }
+    </script>
+
+    <h1>The reading list</h1>
+    <form>
+        <h3>Book</h3>
+        <label>Title</label>
+        <input type="text" placeholder="Titulo de libro" name="title">
+        <label>Author</label>
+        <input type="text" name="author">
+        <label>Genre</label>
+        <input type="text">
+        <button type="button">Añadir</button>
+    </form>
+    <h3>My reading list</h3>
+    <div class="container">
+
+    </div>
+
+    
+</body>
+</html>
