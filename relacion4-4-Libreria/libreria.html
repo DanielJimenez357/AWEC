@@ -8,8 +8,9 @@
 <body>
     <script type="module">
         import {library} from "./funciones.js"
+        let Library = new library()
         window.onload = () => {
-            document.querySelector("button").addEventListener("click", library.madeBook)
+            document.querySelector("button").addEventListener("click", Library.makeBook)
         }
     </script>
 
@@ -17,17 +18,15 @@
     <form>
         <h3>Book</h3>
         <label>Title</label>
-        <input type="text" placeholder="Titulo de libro" name="title">
+        <input type="text" placeholder="Titulo de libro">
         <label>Author</label>
-        <input type="text" name="author">
+        <input type="text">
         <label>Genre</label>
         <input type="text">
         <button type="button">Añadir</button>
     </form>
     <h3>My reading list</h3>
-    <div class="container">
-
-    </div>
+    <div class="container"></div>
 
     
 </body>

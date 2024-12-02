@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        import {clientes} from "./funciones.js"
+        window.onload = ()=> {
+            let Clientes = new clientes()
+        }
+    </script>
+    <div>
+        <label>Nombre de Usuario</label>
+        <input type="text" class="usuario" placeholder="Introduce tu nombre de Usuario">
+        <label>Contraseña</label>
+        <input type="password" class = "contraseña" placeholder="Introduce tu constraseña">
+        <button class="entrar">Entrar</button>
+        <button class="registrarse">Resgitrarse</button>
+    </div>
+</body>
+</html>
