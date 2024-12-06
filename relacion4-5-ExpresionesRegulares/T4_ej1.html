@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script type="module">
+			import {
+				validarMayuscula,
+				validarCaracteresEspeciales,
+				validarCorreo,
+				validarTarjetaCredito,
+				validarLongitud,
+				validarNumero,
+			} from "./funciones.js";
+			console.log(validarMayuscula("fjDfi!eed"));
+			console.log(validarCaracteresEspeciales("fjDfi!eed"));
+			console.log(validarCorreo("test@gmail.com"));
+			console.log(validarTarjetaCredito("4716.7617.8866.2363"));
+			console.log(validarLongitud("12345678"));
+			console.log(validarNumero("adgeyrg12dhue"));
+		</script>
+	</body>
+</html>

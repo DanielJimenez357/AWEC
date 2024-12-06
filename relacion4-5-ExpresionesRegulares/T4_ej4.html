@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleEj4.css">
+</head>
+<body>
+    <script type="module">
+        import {validateRegularExpressionEj2, changeLanguage} from "./funciones.js"
+        window.onload = validateRegularExpressionEj2()
+
+        let selection = document.querySelector(".selection")
+            selection.addEventListener("change", (e)=>{
+                changeLanguage(e.target.value)
+            })
+
+    </script>
+    <div class="contenedor1">
+        <div class="contenedor2">
+            <img src="Captura de pantalla 2024-12-06 191556.png"></img>
+            <div class="formulario">
+                <h3 class="changeLanguage">Welcome to Crowdrise</h3>
+                <p class="changeLanguage">Let's get you all set up so you can verify your nonprofit and beggin setting up your first campaign!</p>
+                <div class="campos">
+                    <p class="changeLanguage">Already have an account?</p>
+                    <label class="changeLanguage">First name</label>
+                    <label class="changeLanguage">Last name</label>
+                    <input type="text">
+                    <input type="text">
+                    <label class="changeLanguage">Phone</label>
+                    <label class="changeLanguage">Email</label>
+                    <input type="tel">
+                    <input type="email">
+                    <label class="changeLanguage">Password</label>
+                    <label class="changeLanguage">Confirm Password</label>
+                    <input type="password">
+                    <input type="password">
+                </div>
+                <p class="penultimo changeLanguage"><input type="checkbox"> Yes, I want to receive a Crowdrise's emails</p>
+                <p class="changeLanguage"><input type="checkbox"> I agreee to the <span>Terms. Privacy Policy</span> and <span>fees</span></p>
+
+                <button class="changeLanguage">Sign Up</button>
+                <p class="changeLanguage">Don't work for a nonprofit? <span>You can still fundraise for one</span> </p>
+                <select class="selection">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

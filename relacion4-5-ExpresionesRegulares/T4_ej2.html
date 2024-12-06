@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        import {validateRegularExpression} from "./funciones.js"
+        window.onload = validateRegularExpression()
+
+    </script>
+    <h2>Formulario de registro</h2>
+    <form style="display: grid; gap: 10px; width: 200px;">
+        
+        <label>Nombre</label>
+        <input type="text" required>
+        
+        <label>Apellidos</label>
+        <input type="text" required>
+        
+        <label>DNI</label>
+        <input type="text" required>
+        
+        <label>Telefono</label>
+        <input type="tel" required>
+
+        <label>Email</label>
+        <input type="email" required>
+        
+        <label>Nombre de usuario</label>
+        <input type="text" required>
+        
+        <button>Enviar</button> 
+    </form>
+</body>
+</html>
