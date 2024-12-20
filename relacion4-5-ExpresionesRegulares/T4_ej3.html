@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleEj3.css">
+</head>
+<body>
+    <script type="module">
+        import {checkLowerCase, checkUpperCase, checkLenght} from "./funciones.js"
+
+        window.onload = ()=>{
+            setInterval(()=>{
+                checkLowerCase()
+                checkUpperCase()
+                checkLenght()
+            }, 10)
+        }
+
+    </script>
+    <input placeholder="username">
+
+<div class="container">
+    <p class="li1">1 lowercase character</p>
+    <br>
+    <p class="li2">1 uppercase character</p>
+    <br>
+    <p class="li3">6 minimun characters</p>
+</div>
+
+        <button>Submit</button>
+</body>
+</html>
