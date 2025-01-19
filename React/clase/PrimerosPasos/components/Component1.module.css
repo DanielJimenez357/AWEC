@@ -1,0 +1,31 @@
+
+
+div {
+    width: 100%;
+    background-color: lightcoral;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div > input[type=text] {
+    width: 220px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid white;
+}
+
+div > input[type=text]::placeholder{
+    color: whitesmoke;
+    text-align: center;
+    font-size: 20px;
+}
+
+div > input[type=submit]{
+    border: none;
+    background-color: pink;
+    padding: 8px 30px;
+    border-radius: 5px;
+}
